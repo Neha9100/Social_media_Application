@@ -47,7 +47,7 @@ const Update = ({setOpenUpdate,user}) => {
       coverUrl = cover ? await upload(cover): user.coverPic;
       profileUrl = profile ? await upload(profile): user.profilePic;
 
-      mutation.mutate({ ...texts,coveric:coverUrl,profilePic:profileUrl });
+      mutation.mutate({ ...texts,coverPic:coverUrl,profilePic:profileUrl });
       setOpenUpdate(false);
     };
 
@@ -55,13 +55,30 @@ const Update = ({setOpenUpdate,user}) => {
         <div className="update">
         Update
         <form>
+            <label>Cover Pic</label>
+            <br/>
             <input type="file" onChange={e=> setCover(e.target.files[0])}/>
+            <hr/>
+            <label>Profile Pic</label>
+            <br/>
             <input type="file" onChange={e=> setProfile(e.target.files[0])}/>
+            <hr/>
+            <label>Name</label>
+            <br/>
             <input type="text" name="name" onChange={handleChange}/>
+            <hr/>
+            <label>City</label>
+            <br/>
             <input type="text" name="city" onChange={handleChange}/>
+            <hr/>
+            <label>Website</label>
+            <br/>
             <input type="text" name="website" onChange={handleChange}/>
+            <hr/>
+            <br/>
             <button onClick={handleClick}>Update</button>
         </form>
+        <br/><br/><br/><br/><br/>
         <button onClick={() => setOpenUpdate(false)}>X</button>
         </div>
     )

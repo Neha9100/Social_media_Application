@@ -11,18 +11,25 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
+// import { withCookies, Cookies } from 'react-cookie';
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
 
+  // const handleLogout = (e) => {
+  //   cookies.removeItem('accessToken');
+  //   window.location.href = '/';
+  //   return false;
+  // }
+
   return (
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>HANG OUT</span>
+          <span className="fa-sharp fa-light fa-bee fa-2xs" style={{"color": "blue"}}>beeSocial</span>
         </Link>
-        <HomeOutlinedIcon />
+        <HomeOutlinedIcon></HomeOutlinedIcon>
         {darkMode ? (
           <WbSunnyOutlinedIcon onClick={toggle} />
         ) : (
@@ -35,6 +42,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
+      <button >Logout</button>
         <PersonOutlinedIcon />
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />

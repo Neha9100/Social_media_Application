@@ -10,23 +10,23 @@ const Stories = () => {
   const stories = [
     {
       id: 1,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Vivek Tiwari",
+      img: "https://www.shutterstock.com/image-photo/unshaven-confident-serious-young-male-260nw-776211322.jpg",
     },
     {
       id: 2,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Neha Singh",
+      img: "https://previews.123rf.com/images/yurolaitsalbert/yurolaitsalbert1804/yurolaitsalbert180400067/98749210-portrait-of-a-young-prospective-female-employee-on-the-background-of-a-large-window.jpg",
     },
     {
       id: 3,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Deepshikha Tripathi",
+      img: "https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     },
     {
       id: 4,
-      name: "John Doe",
-      img: "https://images.pexels.com/photos/13916254/pexels-photo-13916254.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+      name: "Nitish Pandey",
+      img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg",
     },
   ];
 
