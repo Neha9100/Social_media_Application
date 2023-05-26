@@ -1,34 +1,33 @@
 import { Link } from "react-router-dom";
 import "./register.scss";
 import { useState } from "react";
+import axios from "axios"
+
+import { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
-
-  const[inputs,setInputs] = useState({
-    username:"",
-    email:"",
+  const [inputs,setInputs]=useState({
+    username: "",
+    email: "",
     password:"",
-    name:""  
-  })
-
-  const[err,setErr] = useState(null);
-
+    name:"",
+  });
+  const [err,setErr]=useState(null)
 
   const handleChange = e =>{
-    setInputs(prev=>({...prev,[e.target.name]: e.target.value }));
+    setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
   };
-  
-  const handleClick = async e =>{
-    e.preventDefault()
-    try{
-      await axios.post("http://localhost:8800/api/auth/register",inputs)
-    }catch(err){
-    setErr(err.response.data);
-    }
-  };
+const handleClick = async (e)=>{
+  e.preventDefault()
 
-  console.log(err)
+  try{
+await axios.post("http://localhost:8800/api/auth/register", inputs)
+  } catch(err){
+  setErr(err.response.data);
+  }
+};
+console.log(err)
 
   return (
     <div className="register">
@@ -48,12 +47,13 @@ const Register = () => {
         <div className="right">
           <h1>Register</h1>
           <form>
-            <input type="text" placeholder="Username" name="username" onChange={handleChange} />
-            <input type="email" placeholder="Email" name="email" onChange={handleChange} />
-            <input type="password" placeholder="Password" name="password" onChange={handleChange} />
-            <input type="text" placeholder="Name" name="name" onChange={handleChange} />
+            <input type="text" placeholder="Username" name="username" onChange={handleChange} name="username" onChange={handleChange}/>
+            <input type="email" placeholder="Email" name="email" onChange={handleChange} name="email" onChange={handleChange} />
+            <input type="password" placeholder="Password"name="password" onChange={handleChange} name="password" onChange={handleChange} />
+            <input type="text" placeholder="Name" name="name" onChange={handleChange} name="name" onChange={handleChange}/>
+            {err & err}
             {err && err}
-            <button onClick={handleClick}>Register</button>
+            <button onClick={handleClick} onClick={handleClick}>Register</button>
           </form>
         </div>
       </div>
